@@ -27,3 +27,20 @@ document.querySelectorAll("nav a").forEach(anchor => {
         gsap.to(window, {duration: 1, scrollTo: {y: this.getAttribute("href"), offsetY: 70}});
     });
 });
+
+// Active Link Highlighting (Optional)
+window.addEventListener('scroll', () => {
+    let scrollPosition = window.scrollY || window.pageYOffset;
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+        let section = document.querySelector(anchor.getAttribute('href'));
+
+        if (
+            section.offsetTop <= scrollPosition &&
+            section.offsetTop + section.offsetHeight > scrollPosition
+        ) {
+            document.querySelector('nav a.active').classList.remove('active');
+            anchor.classList.add('active');
+        }
+    });
+});

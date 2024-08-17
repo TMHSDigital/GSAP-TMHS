@@ -2,22 +2,25 @@
 
 .demo {
     margin: 20px 0;
+    text-align: center;
 }
 
 /* Basic Box Animation */
 #basic-box {
-    width: 50px;
-    height: 50px;
-    background: #3498db;
-    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    background: #00bcd4;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 /* ScrollTrigger Box Animation */
 #scroll-box {
-    width: 50px;
-    height: 50px;
-    background: #e74c3c;
-    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    background: #e91e63;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 /* Draggable and Inertia Styles */
@@ -28,7 +31,7 @@
 
 #scroll-box.draggable:active {
     cursor: grabbing;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Smooth Scroll Styles */
@@ -39,6 +42,6 @@ nav a {
 
 /* Style for active section */
 nav a.active {
-    background-color: #2980b9;
+    background-color: #008c9e;
     color: #fff;
 }
