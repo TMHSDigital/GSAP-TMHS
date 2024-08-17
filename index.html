@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSAP-TMHS | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="animations.css">
     <script src="cdn-libs.js"></script>
 </head>
 
@@ -42,30 +43,15 @@
                 <h3>Basic Animation</h3>
                 <p>This demo showcases a basic GSAP animation of a box moving across the screen and rotating.</p>
                 <div class="demo">
-                    <div class="box" id="basic-box" style="width: 50px; height: 50px; background: #3498db;"></div>
+                    <div class="box" id="basic-box"></div>
                 </div>
-                <script>
-                    gsap.to("#basic-box", { duration: 2, x: 300, rotation: 360 });
-                </script>
             </div>
             <div class="box">
                 <h3>ScrollTrigger Animation</h3>
                 <p>This demo showcases a GSAP ScrollTrigger animation where elements animate as you scroll down the page.</p>
                 <div class="demo">
-                    <div class="box" id="scroll-box" style="width: 50px; height: 50px; background: #e74c3c;"></div>
+                    <div class="box" id="scroll-box"></div>
                 </div>
-                <script>
-                    gsap.to("#scroll-box", {
-                        x: 300,
-                        rotation: 360,
-                        scrollTrigger: {
-                            trigger: "#scroll-box",
-                            start: "top center",
-                            end: "top 100px",
-                            scrub: true
-                        }
-                    });
-                </script>
             </div>
         </div>
     </section>
@@ -74,10 +60,8 @@
         <p>GSAP-TMHS &copy; 2024</p>
     </footer>
 
-    <!-- Smooth Scroll Animation -->
-    <script>
-        gsap.to(window, { duration: 0.5, scrollTo: ".container" });
-    </script>
+    <!-- GSAP Animations -->
+    <script src="animations.js"></script>
 </body>
 
 </html>
