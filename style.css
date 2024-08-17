@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header ul li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+/* Showcase Styles */
+#showcase {
+    background: #333 url('../images/showcase.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 400px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+#showcase h1 {
+    font-size: 55px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#showcase p {
+    font-size: 20px;
+}
+
+/* Section Styles */
+section {
+    padding: 20px 0;
+    border-bottom: #0779e4 1px solid;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section .box {
+    background: #fff;
+    border: #e0e0e0 1px solid;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+section .box h3 {
+    margin-top: 0;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Navigation Bar Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    background: #0779e4;
+    border-radius: 3px;
+}
+
+nav ul li a:hover {
+    background: #0660b0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    #showcase h1 {
+        font-size: 40px;
+    }
+
+    #showcase p {
+        font-size: 18px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
