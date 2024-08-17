@@ -3,39 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Using CDN Links File</title>
-    <link rel="stylesheet" href="style.css">
+    <title>GSAP-TMHS | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/cdn-libs.js"></script>
 </head>
 <body>
-    <div class="box"></div>
-    <div id="trigger"></div>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">GSAP</span> TMHS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="docs/basics.html">Basics</a></li>
+                    <li><a href="docs/scrolltrigger.html">ScrollTrigger</a></li>
+                    <li><a href="docs/draggable.html">Draggable</a></li>
+                    <li><a href="docs/about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Include the CDN links -->
-    <script src="cdn-libs.js"></script>
+    <section id="showcase">
+        <div class="container">
+            <h1>Welcome to GSAP-TMHS</h1>
+            <p>Explore the powerful world of GSAP animations.</p>
+        </div>
+    </section>
 
-    <script>
-        // Example GSAP animation with ScrollTrigger
-        gsap.to(".box", {
-            x: 500,
-            rotation: 360,
-            duration: 3,
-            scrollTrigger: {
-                trigger: "#trigger",
-                start: "top center",
-                end: "top 100px",
-                scrub: true
-            }
-        });
+    <section id="demos">
+        <div class="container">
+            <h2>Featured Demos</h2>
+            <div class="box">
+                <h3>Basic Animation</h3>
+                <p>This demo showcases a basic GSAP animation of a box moving across the screen and rotating.</p>
+                <div class="demo">
+                    <div class="box" id="basic-box"></div>
+                </div>
+                <script>
+                    gsap.to("#basic-box", { duration: 2, x: 300, rotation: 360 });
+                </script>
+            </div>
+            <div class="box">
+                <h3>ScrollTrigger Animation</h3>
+                <p>This demo showcases a GSAP ScrollTrigger animation where elements animate as you scroll down the page.</p>
+                <div class="demo">
+                    <div class="box" id="scroll-box"></div>
+                </div>
+                <script>
+                    gsap.to("#scroll-box", {
+                        x: 300,
+                        rotation: 360,
+                        scrollTrigger: {
+                            trigger: "#scroll-box",
+                            start: "top center",
+                            end: "top 100px",
+                            scrub: true
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
 
-        // Example jQuery usage
-        $(document).ready(function(){
-            console.log("jQuery is working!");
-        });
-
-        // Example Lodash usage
-        const array = [1, 2, 3, 4, 5];
-        const reversedArray = _.reverse(array.slice());
-        console.log("Reversed Array: ", reversedArray);
-    </script>
+    <footer>
+        <p>GSAP-TMHS &copy; 2024</p>
+    </footer>
 </body>
 </html>
