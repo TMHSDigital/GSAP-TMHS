@@ -4,14 +4,41 @@
     margin: 20px 0;
 }
 
+/* Basic Box Animation */
 #basic-box {
     width: 50px;
     height: 50px;
     background: #3498db;
+    border-radius: 5px;
 }
 
+/* ScrollTrigger Box Animation */
 #scroll-box {
     width: 50px;
     height: 50px;
     background: #e74c3c;
+    border-radius: 5px;
+}
+
+/* Draggable and Inertia Styles */
+#scroll-box.draggable {
+    cursor: grab;
+    transition: box-shadow 0.3s ease;
+}
+
+#scroll-box.draggable:active {
+    cursor: grabbing;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth Scroll Styles */
+nav a {
+    scroll-behavior: smooth;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+/* Style for active section */
+nav a.active {
+    background-color: #2980b9;
+    color: #fff;
 }
