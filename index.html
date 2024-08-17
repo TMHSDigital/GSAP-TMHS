@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using CDN Links File</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box"></div>
+    <div id="trigger"></div>
+
+    <!-- Include the CDN links -->
+    <script src="cdn-libs.js"></script>
+
+    <script>
+        // Example GSAP animation with ScrollTrigger
+        gsap.to(".box", {
+            x: 500,
+            rotation: 360,
+            duration: 3,
+            scrollTrigger: {
+                trigger: "#trigger",
+                start: "top center",
+                end: "top 100px",
+                scrub: true
+            }
+        });
+
+        // Example jQuery usage
+        $(document).ready(function(){
+            console.log("jQuery is working!");
+        });
+
+        // Example Lodash usage
+        const array = [1, 2, 3, 4, 5];
+        const reversedArray = _.reverse(array.slice());
+        console.log("Reversed Array: ", reversedArray);
+    </script>
+</body>
+</html>
