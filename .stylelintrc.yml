@@ -1,0 +1,11 @@
+extends:
+  - stylelint-config-standard
+
+rules:
+  indentation: 2
+  string-quotes: 'single'
+  color-hex-case: 'lower'
+  color-hex-length: 'short'
+  block-no-empty: true
+  max-empty-lines: 1
+  no-duplicate-selectors: true
