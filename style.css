@@ -1,26 +1,26 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1a1a1a;
+    color: #f4f4f4;
     line-height: 1.6;
 }
 
 .container {
-    width: 80%;
+    width: 85%;
     margin: auto;
     overflow: hidden;
 }
 
 /* Header Styles */
 header {
-    background: #333;
+    background: #0d0d0d;
     color: #fff;
     padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
+    padding-bottom: 15px;
+    border-bottom: #3498db 3px solid;
 }
 
 header a {
@@ -55,7 +55,7 @@ header nav {
 
 /* Showcase Styles */
 #showcase {
-    background: #333 url('../images/showcase.jpg') no-repeat center center/cover;
+    background: #3498db;
     color: #fff;
     height: 400px;
     text-align: center;
@@ -74,29 +74,36 @@ header nav {
 
 /* Section Styles */
 section {
-    padding: 20px 0;
-    border-bottom: #0779e4 1px solid;
+    padding: 40px 0;
+    border-bottom: #3498db 1px solid;
 }
 
 section h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #fff;
 }
 
 section .box {
-    background: #fff;
-    border: #e0e0e0 1px solid;
-    padding: 15px;
+    background: #222;
+    border: #444 1px solid;
+    padding: 20px;
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 section .box h3 {
     margin-top: 0;
+    color: #fff;
+}
+
+section .box p {
+    color: #ccc;
 }
 
 /* Footer Styles */
 footer {
-    background: #333;
+    background: #0d0d0d;
     color: #fff;
     text-align: center;
     padding: 30px 0;
@@ -121,13 +128,14 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    padding: 5px 10px;
-    background: #0779e4;
+    padding: 10px 15px;
+    background: #3498db;
     border-radius: 3px;
+    transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: #0660b0;
+    background: #2980b9;
 }
 
 /* Media Queries */
