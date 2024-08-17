@@ -1,74 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GSAP-TMHS | Home</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="cdn-libs.js"></script>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">GSAP</span> TMHS</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="docs/basics.html">Basics</a></li>
-                    <li><a href="docs/scrolltrigger.html">ScrollTrigger</a></li>
-                    <li><a href="docs/draggable.html">Draggable</a></li>
-                    <li><a href="docs/about.html">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
 
-    <section id="showcase">
-        <div class="container">
-            <h1>Welcome to GSAP-TMHS</h1>
-            <p>Explore the powerful world of GSAP animations.</p>
-        </div>
-    </section>
+.container {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+}
 
-    <section id="demos">
-        <div class="container">
-            <h2>Featured Demos</h2>
-            <div class="box">
-                <h3>Basic Animation</h3>
-                <p>This demo showcases a basic GSAP animation of a box moving across the screen and rotating.</p>
-                <div class="demo">
-                    <div class="box" id="basic-box" style="width: 50px; height: 50px; background: #3498db;"></div>
-                </div>
-                <script>
-                    gsap.to("#basic-box", { duration: 2, x: 300, rotation: 360 });
-                </script>
-            </div>
-            <div class="box">
-                <h3>ScrollTrigger Animation</h3>
-                <p>This demo showcases a GSAP ScrollTrigger animation where elements animate as you scroll down the page.</p>
-                <div class="demo">
-                    <div class="box" id="scroll-box" style="width: 50px; height: 50px; background: #e74c3c;"></div>
-                </div>
-                <script>
-                    gsap.to("#scroll-box", {
-                        x: 300,
-                        rotation: 360,
-                        scrollTrigger: {
-                            trigger: "#scroll-box",
-                            start: "top center",
-                            end: "top 100px",
-                            scrub: true
-                        }
-                    });
-                </script>
-            </div>
-        </div>
-    </section>
+/* Sticky Header */
+header {
+    background: #151515;
+    color: #fff;
+    padding: 10px 0;
+    border-bottom: #3498db 3px solid;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    <footer>
-        <p>GSAP-TMHS &copy; 2024</p>
-    </footer>
-</body>
-</html>
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header ul li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+/* Showcase Styles */
+#showcase {
+    background: #3498db;
+    color: #fff;
+    height: 400px;
+    text-align: center;
+    padding-top: 100px;
+    background-image: url('https://path-to-your-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#showcase h1 {
+    font-size: 55px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#showcase p {
+    font-size: 20px;
+}
+
+/* Section Styles */
+section {
+    padding: 40px 0;
+    border-bottom: #3498db 1px solid;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+section .box {
+    background: #333;
+    border: #555 1px solid;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+section .box:hover {
+    transform: translateY(-5px);
+}
+
+section .box h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+section .box p {
+    color: #ccc;
+}
+
+/* Footer Styles */
+footer {
+    background: #151515;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Navigation Bar Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    background: #3498db;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #2980b9;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    #showcase h1 {
+        font-size: 40px;
+    }
+
+    #showcase p {
+        font-size: 18px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
