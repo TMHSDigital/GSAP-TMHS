@@ -146,3 +146,23 @@ Want someone to build you an **AWESOME** site? **Contact us today!**
 </div>
 
 ---
+
+## Installation
+
+1. Clone the repository
+2. Run 
+pm install
+3. Run 
+pm start to start the development server
+
+## Usage
+
+Describe how to use your project here.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
