@@ -1,46 +1,66 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Draggable } from 'gsap/Draggable';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger, Draggable);
+
 // Basic Animation
-import { gsap } from 'gsap';to("#basic-box", { duration: 2, x: 300, rotation: 360 });
+gsap.to("#basic-box", { 
+    duration: 2, 
+    x: 300, 
+    rotation: 360,
+    repeat: -1,
+    yoyo: true
+});
 
 // ScrollTrigger Animation
-import { gsap } from 'gsap';to("#scroll-box", {
+gsap.to("#scroll-box", {
     x: 300,
     rotation: 360,
     scrollTrigger: {
         trigger: "#scroll-box",
         start: "top center",
         end: "top 100px",
-        scrub: true
+        scrub: true,
+        markers: true // for debugging, remove in production
     }
 });
 
-// Inertia Effect for Draggable
+// Draggable Animation
 Draggable.create("#scroll-box", {
     type: "x,y",
-    inertia: true,
-    bounds: document.body
+    edgeResistance: 0.65,
+    bounds: "#demos",
+    inertia: true
 });
 
 // Smooth Scroll
-document.querySelectorAll("nav a").forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        gsap.to(window, {duration: 1, scrollTo: {y: this.getAttribute("href"), offsetY: 70}});
+        const targetId = this.getAttribute('href');
+        gsap.to(window, {
+            duration: 1, 
+            scrollTo: targetId,
+            ease: "power2.inOut"
+        });
     });
 });
 
-// Active Link Highlighting (Optional)
-window.addEventListener('scroll', () => {
-    let scrollPosition = window.scrollY || window.pageYOffset;
+// Active Link Highlighting
+function updateActiveLink() {
+    const scrollPosition = window.scrollY;
 
-    document.querySelectorAll('nav a').forEach(anchor => {
-        let section = document.querySelector(anchor.getAttribute('href'));
-
-        if (
-            section.offsetTop <= scrollPosition &&
-            section.offsetTop + section.offsetHeight > scrollPosition
-        ) {
-            document.querySelector('nav a.active').classList.remove('active');
-            anchor.classList.add('active');
+    document.querySelectorAll('nav a').forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
-});
+}
+
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink);
